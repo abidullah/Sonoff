@@ -36,7 +36,7 @@ packages:
   remote_package:
     url: https://github.com/abidullah/Sonoff
     ref: main
-    files: [nspanel.yaml]
+    files: [nspanel_esphome.yaml]
     refresh: 300s
 
 ##### DO NOT CHANGE ANYTHING! #####
