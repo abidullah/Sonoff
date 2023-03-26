@@ -1,10 +1,10 @@
 # Sonoff
 Sonoff NSPanel Esphome
 # NSPanel Custom with HA Blueprint Modded to work with US ver
-This version of HA Blueprint has 
 
+This version of HA Blueprint has 
 - Option for time format 12/24 hrs which can be selected from Automations
-- Shows WiFi Signal 
+- Shows WiFi Signal based on Signal Power
 
 
 # How To Use.
