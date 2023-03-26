@@ -55,11 +55,6 @@ external_components:
     components: [nextion]
     refresh: 1h
 
-##### ESPHOME CONFIGURATION #####
-esphome:
-  name: ${device_name}
-  min_version: 2022.10.2
-  comment: Sonoff NSPanel  - Location ${device_name}
 
 ##### TYPE OF ESP BOARD #####
 esp32:
