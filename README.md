@@ -11,6 +11,8 @@ This version of HA Blueprint has
 just create a new device and replace the code with the code below and make the changes where mentioned # CHANGE ME 
 
 
+```
+
 
 ###### copy and paste from here begin ######
 
@@ -40,7 +42,7 @@ packages:
 ##### DO NOT CHANGE ANYTHING! #####
 
 ###### copy and paste from here end ######
-
+```
 
 
 
