@@ -32,22 +32,10 @@
 
 ##### END OF ADVANCED CONFIGURATION ##############################################################
 
-##### WIFI SETUP #####
 wifi:
-  ssid: ${wifi_ssid}
-  password: ${wifi_password}
-  power_save_mode: none
-  ##### advanced config - uncomment to use static IP-Config #####  
-  # manual_ip:
-  #   static_ip: ${ip}
-  #   gateway: ${gw}
-  #   subnet: ${subnet}
-  #   dns1: ${dns}
-  # domain: ${domain}
-  ##### Enable fallback hotspot (captive portal) in case wifi connection fails
-  ap:
-    ssid: "${device_name}"
-    password: ${wifi_password}
+  ap: {} # This spawns an AP with the device name and mac address with no password.
+
+captive_portal:
 
 ##### Functionality for the Nextion display #####
 external_components:
@@ -62,13 +50,6 @@ esp32:
 
 captive_portal:
 
-web_server:
-  port: 80
-  auth:
-    username: admin
-    password: ${wifi_password}
-    ##### advanced config - change to use web_password ##### 
-    # password: ${web_password}
 
 ##### OTA PASSWORD #####
 ota:
@@ -958,6 +939,15 @@ display:
     tft_url: ${nextion_update_url}
     on_setup:
       then:
+        - lambda: |-
+          // Check if WiFi hot-spot is configured
+          if (wifi::global_wifi_component->has_sta()) {
+            // Show the main page
+            id(disp).goto_page("page 8");
+          } else {
+            // Show WiFi Access Point QR code for captive portal, see https://qifi.org/
+            id(disp).goto_page("qrcode");
+          }      
         - lambda: id(disp1).send_command_printf("page 8");
         - lambda: id(disp1).set_component_text_printf("boot.esph_version", "%s", "3.1.2"); ### esphome-version ###
         - wait_until:
