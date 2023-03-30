@@ -32,8 +32,22 @@
 
 ##### END OF ADVANCED CONFIGURATION ##############################################################
 
+##### WIFI SETUP #####
 wifi:
-  ap: {} # This spawns an AP with the device name and mac address with no password.
+  ssid: ${wifi_ssid}
+  password: ${wifi_password}
+  power_save_mode: none
+  ##### advanced config - uncomment to use static IP-Config #####  
+  # manual_ip:
+  #   static_ip: ${ip}
+  #   gateway: ${gw}
+  #   subnet: ${subnet}
+  #   dns1: ${dns}
+  # domain: ${domain}
+  ##### Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "${device_name}"
+    password: ${wifi_password}
 
 captive_portal:
 
