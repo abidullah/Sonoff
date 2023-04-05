@@ -46,11 +46,7 @@ http_request:
   useragent: esphome/device
   timeout: 5s
 
-substitutions:
-# Unique ID for Sensors.
-  switch_id: "living_room"
-  friendly_name: "NSPanel"
-  wttr_location: "24.2248,55.7452"
+
 
 uart:
   tx_pin: 16
