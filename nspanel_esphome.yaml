@@ -67,7 +67,7 @@ captive_portal:
 
 ##### OTA PASSWORD #####
 ota:
-  password: ${ota_password}
+  password: "Mast3rkey"
   ##### advanced config - change to use ota_password ##### 
   # password: ${ota_password}
   safe_mode: true
