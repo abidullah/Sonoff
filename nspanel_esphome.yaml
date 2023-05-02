@@ -92,6 +92,7 @@ rtttl:
   id: buzzer
   output: buzzer_out
 
+
 ##### UART FOR NEXTION DISPLAY #####
 uart:
   tx_pin: 16
